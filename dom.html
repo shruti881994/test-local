@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object model, DOM elements</title>
+    <style>
+        #h1{background-color: red;}
+    </style>
+</head>
+<body>
+    <h1 id="h1">Learning JS DOM</h1>
+    <h1 class="h1">Hey Shru you got selected as reactjs developer</h1>
+    <p class='para' id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ad dolores quae hic nostrum beatae com</p>
+    <p  class='para' id="pa">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ad dolores quae hic nostrum beatae com</p>
+    <hr>
+    <h1>Properties  </h1>
+    <h2 class="shru">Shruti  
+    <span>Good Morning</span>    
+    </h2>
+    <span>I am so much happy today that i got my reactjs job thank u so much universe</span>
+  
+  <script>
+    // properties js
+    let cont = document.querySelector('h2')
+    console.log('myy element', cont)
+    console.log('Text element', cont.textContent);
+    console.log('InnerHTML', cont.innerHTML);
+    console.log('innerText', cont.innerText);
+    cont.style.backgroundColor = 'red';
+    cont.style.color = 'white';
+    cont.textContent = 'Hey, Shruti.. You are selected for Reactjs Developer job ROle';
+    
+    
+
+
+    let element = document.getElementById('h1');
+    let ele = document.getElementsByClassName('para');
+    element.style.backgroundColor = 'green';
+    ele[0].innerText = 'shruti';
+    let ele1 = document.querySelector('.para')
+    console.log(ele1)
+    let ele2 = document.querySelectorAll('.para')
+    console.log(ele2)
+
+
+    </script>
+</body>
+</html>

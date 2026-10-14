@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <h1>Browser Object Model, Multipurpose Calculator</h1>
+
+
+
+    <script>
+        let option = prompt("Select Operations:\n 1. Basic Airtmetic(+, -, /,*), \n 2. Currency Conversions ($ to INR or INR to $), \n 3. weight conversion(kg to grams), \n 4. Temperature conversion (celsius to fahernheit), \n Enter your choice (1/2/3/4) ");
+
+        switch(option){
+            case '1': 
+            let num1 = parseFloat(prompt('Enter the first number'));
+            let num2 = parseFloat(prompt('Enter the second number'));
+            let operation = prompt('Enter operation => +, -, /, *');
+            let result;
+            if(operation == '+') result = num1 + num2;
+            else if(operation == '-') result = num1 - num2;
+            else if(operation == '/') result = num1 / num2;
+            else if(operation == '*') result = num1 * num2;
+            alert('Result is=' +result);
+            break;
+            case '2': 
+            let currency = prompt('Enter 1 to convert $ to INR or Enter 2 for vice versa');
+            let exchange = 87.81;
+            let currentcurrencey = parseFloat(prompt('Enter the Amount:'));
+            if(currency == 1){
+                let result = currentcurrencey * exchange;
+                alert("Result is "+result+" INR ");
+            }
+            else if(currency == 2){
+                let result =  currentcurrencey / exchange;
+            alert("Result "+result+" $");
+            }
+            else{
+                alert('Invalid Choice');
+            }
+            case '3':
+                let kg = parseFloat(prompt('Enter the weight in KG'));
+                alert('Result: '+ (kg*1000)+'grams');
+
+            case '4':
+               let cs = parseFloat(prompt('Enter the Temp in celsius'));
+            let resu = (cs*9/5 + 32);
+            alert("Rsult: " +resu+ " Fahrenhit");
+            break;
+            default: alert('Invalid choice');
+            
+
+        } 
+
+
+    </script>
+
+</body>
+</html>

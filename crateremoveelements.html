@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+        }
+
+        .container {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: max-content;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM Manipulation Advance </h1>
+    <div class="container">
+        <h1>Event Handling</h1>
+        <h2 class="text">Types of event</h2>
+        <button onmouseover="handleClick()">Change color</button>
+        <button id="light" onclick="bgChangeLight()">Light Theme</button>
+        <button id="dark" onclick="bgChangeDark()">Dark Theme</button>
+        <h1>Event Listners</h1>
+        <button type="button" id="btn_1">change to pink</button>
+        <button type="button" id="btn_2">chnage to orange</button>
+
+    </div>
+
+
+    <script>
+        let h2 = document.createElement('h2');
+        h2.innerText = 'This is H2 dynamic element';
+        h2.setAttribute('calss', 'h2')
+        h2.setAttribute('id', 'h2')
+        console.log(h2);
+        document.querySelector('body').append(h2);
+        // document.querySelector('body').prepend(h2);
+        document.querySelector('body').after(h2);
+        document.querySelector('body').before(h2);
+        // create dynamic image
+        let img = document.createElement('img');
+        img.setAttribute('src', 'https://www.salzburgerland.com/en/wp-content/uploads/2016/10/salzburger-saalachtal-sommer10-1200x1200.jpg');
+        document.querySelector('h2').after(img);
+
+        // event handling
+       
+        let bgChangeLight = ()=>{
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+        }
+        let bgChangeDark = ()=>{
+            document.body.style.backgroundColor = '#333';
+            document.body.style.color = '#fff';
+        }
+
+        function handleClick() {
+            let text = document.querySelector('.text');
+            text.style.color = 'red';
+        }
+         let btn1 = document.querySelector('#light');
+        let btn2 = document.querySelector('#dark');
+       
+        // event listener
+        let btn_1 = document.querySelector('#btn_1');
+        let btn_2 = document.querySelector('#btn_2');
+
+        btn_1.addEventListener('click', ()=>{
+            document.body.style.backgroundColor = 'pink';
+            document.body.style.color = 'white';
+        })
+        btn_2.addEventListener('click', ()=>{
+            document.body.style.backgroundColor = 'orange';
+            document.body.style.color = 'white';
+        })
+        
+
+    </script>
+</body>
+
+</html>

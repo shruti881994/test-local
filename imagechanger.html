@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer page</title>
+    <style>
+        body{background-color: #333;color: #fff;text-align: center;}
+        .container{display: flex;flex-direction: column;justify-content: center;align-items: center;        }
+        .container img{width: 500px;height: 400px;border: 2px solid #eee;border-radius: 10px;cursor: pointer;}
+        .container h2{background-color: blue;padding: 10px;border-radius: 10px;cursor: pointer;        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Image Changer</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq07cFd1kLEFvJ56hOhjkcgZMrgtcl8vjNUxpqcUwaf1G9y6XF9wtv9WZG&s=10"/>
+        <h2>Birds</h2>
+    </div>
+
+    <script>
+        let img = document.querySelector('img');
+        let h2 = document.querySelector('h2');
+        let prev_src = img.src;
+        let prev_text = h2.innerText;
+
+        img.addEventListener('mouseover', ()=>{
+            img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_-WOWKtcIyCZVj6PEK8QE_B94his0f8_HU7mwtS7TrzPcM5GuHD9adY4Y&s=10';
+            h2.innerText = 'Lover Birds';  
+        })
+
+        img.addEventListener('mouseleave', ()=>{
+            img.src = prev_src;
+            h2.innerText = prev_text;
+        })
+    </script>
+    
+</body>
+</html>
